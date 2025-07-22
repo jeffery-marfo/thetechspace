@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Code, Palette, Smartphone } from 'lucide-react';
 
 const Home = () => {
   return (
@@ -36,43 +36,72 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="py-16 bg-gray-50 text-center">
-        <h2 className="text-4xl font-bold text-gray-900 mb-4">What We Do Best</h2>
-        <p className="text-gray-600 mb-12">From concept to launch, we deliver comprehensive digital solutions that elevate your brand.</p>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto px-4">
-          <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
-            <div className="flex justify-center mb-4">
-              <span className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-blue-100 text-blue-600">
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
-                </svg>
-              </span>
-            </div>
-            <h3 className="text-xl font-semibold text-gray-900 mb-2">Website Design & Development</h3>
-            <p className="text-gray-600">Custom websites that are fast, responsive, and optimized for conversions. Built with the latest technologies.</p>
+      {/* Services Highlight */}
+      <section className="py-20 bg-slate-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">What We Do Best</h2>
+            <p className="text-xl text-slate-600 max-w-2xl mx-auto">
+              From concept to launch, we deliver comprehensive digital solutions that elevate your brand.
+            </p>
           </div>
-          <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
-            <div className="flex justify-center mb-4">
-              <span className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-purple-100 text-purple-600">
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
-                </svg>
-              </span>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="group hover:shadow-xl transition-all duration-300 border-0 shadow-lg bg-white p-8 text-center rounded-lg">
+              <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-blue-500 transition-colors">
+                <Code className="h-8 w-8 text-blue-600 group-hover:text-white" />
+              </div>
+              <h3 className="text-xl font-bold text-slate-900 mb-4">Website Design & Development</h3>
+              <p className="text-slate-600">
+                Custom websites that are fast, responsive, and optimized for conversions. Built with the latest
+                technologies.
+              </p>
             </div>
-            <h3 className="text-xl font-semibold text-gray-900 mb-2">Graphic Design</h3>
-            <p className="text-gray-600">Visual identity, branding, and marketing materials that make your business stand out from the competition.</p>
+
+            <div className="group hover:shadow-xl transition-all duration-300 border-0 shadow-lg bg-white p-8 text-center rounded-lg">
+              <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-purple-500 transition-colors">
+                <Palette className="h-8 w-8 text-purple-600 group-hover:text-white" />
+              </div>
+              <h3 className="text-xl font-bold text-slate-900 mb-4">Graphic Design</h3>
+              <p className="text-slate-600">
+                Visual identity, branding, and marketing materials that make your business stand out from the
+                competition.
+              </p>
+            </div>
+
+            <div className="group hover:shadow-xl transition-all duration-300 border-0 shadow-lg bg-white p-8 text-center rounded-lg">
+              <div className="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-emerald-500 transition-colors">
+                <Smartphone className="h-8 w-8 text-emerald-600 group-hover:text-white" />
+              </div>
+              <h3 className="text-xl font-bold text-slate-900 mb-4">UI/UX Design</h3>
+              <p className="text-slate-600">
+                User-centered design that creates intuitive experiences and drives engagement across all devices.
+              </p>
+            </div>
           </div>
-          <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
-            <div className="flex justify-center mb-4">
-              <span className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-green-100 text-green-600">
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                </svg>
-              </span>
+        </div>
+      </section>
+
+      {/* Stats Section */}
+      <section className="py-20 bg-slate-900 text-white">
+        <div className="container mx-auto px-4">
+          <div className="grid md:grid-cols-4 gap-8 text-center">
+            <div>
+              <div className="text-4xl font-bold text-emerald-400 mb-2">150+</div>
+              <div className="text-slate-300">Projects Completed</div>
             </div>
-            <h3 className="text-xl font-semibold text-gray-900 mb-2">UI/UX Design</h3>
-            <p className="text-gray-600">User-centered design that creates intuitive experiences and drives engagement across all devices.</p>
+            <div>
+              <div className="text-4xl font-bold text-emerald-400 mb-2">98%</div>
+              <div className="text-slate-300">Client Satisfaction</div>
+            </div>
+            <div>
+              <div className="text-4xl font-bold text-emerald-400 mb-2">5+</div>
+              <div className="text-slate-300">Years Experience</div>
+            </div>
+            <div>
+              <div className="text-4xl font-bold text-emerald-400 mb-2">24/7</div>
+              <div className="text-slate-300">Support Available</div>
+            </div>
           </div>
         </div>
       </section>
