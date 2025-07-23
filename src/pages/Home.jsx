@@ -105,6 +105,58 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+       <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">What Our Clients Say</h2>
+            <p className="text-xl text-slate-600">Don't just take our word for it - hear from our satisfied clients.</p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[1, 2, 3].map((i) => (
+              <div key={i} className="border-0 shadow-lg bg-white p-6 rounded-lg">
+                <div className="p-6">
+                  <div className="flex mb-4">
+                    {[1, 2, 3, 4, 5].map((star) => (
+                      <star key={star} className="h-5 w-5 fill-yellow-400 text-yellow-400" />
+                    ))}
+                  </div>
+                  <p className="text-slate-600 mb-4">
+                    "TTS delivered exactly what we needed. Professional, creative, and always on time. Highly
+                    recommended!"
+                  </p>
+                  <div className="flex items-center">
+                    <div className="w-10 h-10 bg-slate-200 rounded-full mr-3"></div>
+                    <div>
+                      <div className="font-semibold text-slate-900">Sarah Johnson</div>
+                      <div className="text-sm text-slate-500">CEO, TechStart</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Newsletter Section */}
+      <section className="py-20 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
+        <div className="container mx-auto px-4 text-center">
+          <div className="max-w-2xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Stay Inspired</h2>
+            <p className="text-xl mb-8 text-blue-100">
+              Get tips, trends & updates in your inbox. Join our community of digital innovators.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+              <input type="email" placeholder="Enter your email" className="flex-1 p-2 bg-white text-slate-900 rounded-md focus:outline-none focus:ring-2 focus:ring-emerald-500" />
+              <button className="bg-emerald-500 hover:bg-emerald-600 text-white font-semibold px-8 py-2 rounded-md transition-colors">
+                Subscribe
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   );
 };
