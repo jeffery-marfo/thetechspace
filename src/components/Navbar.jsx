@@ -1,15 +1,13 @@
 import React from 'react';
+import logo1 from '../assets/img/logo1.png'; // Adjust the path to your logo image file
 
 const Navbar = () => {
   return (
     <nav className="flex items-center justify-between px-6 py-4 bg-white shadow-md">
-      {/* Logo Section */}
-      <div className="flex items-center space-x-2">
-        <div className="bg-purple-600 text-white px-2 py-1 rounded-md font-semibold text-sm">
-          TTS
-        </div>
-        <h1 className="text-lg font-semibold text-gray-800">The Tech Space</h1>
-      </div>
+       <div className="flex items-center space-x-2">
+      <img src={logo1} alt="The Tech Space Logo" className="h-15 w-15" />
+      <h1 className="text-lg font-semibold text-gray-800">The Tech Space</h1>
+    </div>
 
       {/* Navigation Links */}
       <ul className="flex space-x-6 text-gray-600 font-medium">
