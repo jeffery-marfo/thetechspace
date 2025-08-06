@@ -1,22 +1,26 @@
 import { Target, Eye, Heart, Zap, Users, Award } from "lucide-react";
-
+import Ab4 from "../assets/img/Ab4.jpg"; // Adjust the path to your image file
 
 export default function AboutPage() {
   return (
     <div className="min-h-screen bg-white">
-      
-
-      {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-slate-50 to-blue-50">
-        <div className="container mx-auto px-4">
+      {/* Hero Section with Image Background */}
+      <section className="relative py-40">
+        <img
+          src={Ab4}
+          alt="About Hero"
+          className="absolute top-0 left-0 w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-black opacity-20"></div> {/* Overlay for readability */}
+        <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <span className="inline-block mb-6 bg-blue-100 text-blue-800 border border-blue-200 px-3 py-1 rounded-full text-sm font-medium">
+            <span className="inline-block mb-6  bg-slate-900  text-white border border-blue-200 px-3 py-1 rounded-full text-sm font-medium">
               About TTS
             </span>
-            <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
               We're More Than Just a Creative Agency
             </h1>
-            <p className="text-xl text-slate-600 mb-8">
+            <p className="text-xl text-blue-100 mb-8">
               At TTS, we believe in the perfect blend of creativity and technology. We're passionate about creating
               digital experiences that not only look amazing but also drive real business results.
             </p>
@@ -140,8 +144,6 @@ export default function AboutPage() {
           </button>
         </div>
       </section>
-
-      
     </div>
   );
 }

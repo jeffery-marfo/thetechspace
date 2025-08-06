@@ -1,18 +1,31 @@
 import React from 'react';
 import { ArrowRight, Code, Palette, Smartphone } from 'lucide-react';
+import heroVideo from '../assets/img/hero-video.mp4'; // Adjust the path to your video file
 
 const Home = () => {
   return (
     <>
-      <section className="bg-gradient-to-br from-[#0c1731] to-[#1e3a8a] text-white min-h-screen flex items-center justify-center px-4">
-        <div className="text-center max-w-4xl">
+      {/* Hero Section with Video Background */}
+      <section className="relative min-h-screen flex items-center justify-center px-4">
+        <video
+          className="absolute top-0 left-0 w-full h-full object-cover"
+          autoPlay
+          loop
+          muted
+          playsInline
+        >
+          <source src={heroVideo} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        <div className="absolute inset-0 bg-black opacity-60"></div> {/* Overlay for readability */}
+        <div className="text-center max-w-4xl relative z-10">
           {/* Top Tag */}
           <div className="inline-block bg-teal-700 text-white text-sm font-medium px-4 py-1 rounded-full mb-4">
             Your Partner in Digital Innovation
           </div>
 
           {/* Main Heading */}
-          <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-6">
+          <h1 className="text-4xl md:text-6xl  text-white font-bold leading-tight mb-6">
             Your Partner in Digital <br />
             <span className="text-white">Design and Development</span>
           </h1>
@@ -106,7 +119,7 @@ const Home = () => {
         </div>
       </section>
 
-       <section className="py-20 bg-white">
+      <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">What Our Clients Say</h2>

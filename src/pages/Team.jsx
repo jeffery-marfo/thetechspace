@@ -1,5 +1,7 @@
 import { Linkedin, Twitter, Github } from "lucide-react";
-
+import Ab1 from "../assets/img/Ab1.jpg";
+import Ab2 from "../assets/img/Ab2.jpeg";
+import Ab3 from "../assets/img/Ab3.jpeg";
 
 export default function TeamPage() {
   const teamMembers = [
@@ -9,6 +11,7 @@ export default function TeamPage() {
       specialty: "Brand Strategy & Visual Design",
       bio: "With 8+ years in creative direction, Alex leads our design vision and ensures every project tells a compelling story.",
       funFact: "Coffee enthusiast who can design better after the 3rd cup ☕",
+      image: Ab1
     },
     {
       name: "Sarah Chen",
@@ -16,6 +19,7 @@ export default function TeamPage() {
       specialty: "Full-Stack Development & DevOps",
       bio: "Sarah brings complex ideas to life with clean, scalable code. She's our go-to for technical architecture and optimization.",
       funFact: "Solves coding problems while rock climbing 🧗‍♀️",
+      image: Ab2
     },
     {
       name: "Marcus Rodriguez",
@@ -23,14 +27,12 @@ export default function TeamPage() {
       specialty: "User Experience & Interface Design",
       bio: "Marcus crafts intuitive user experiences that convert. His designs are both beautiful and highly functional.",
       funFact: "Sketches app ideas on napkins during lunch breaks 📱",
+      image: Ab3
     },
-    
   ];
 
   return (
     <div className="min-h-screen bg-white">
-      
-
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-br from-slate-50 to-blue-50">
         <div className="container mx-auto px-4">
@@ -56,7 +58,12 @@ export default function TeamPage() {
                 key={index}
                 className="group hover:shadow-xl transition-all duration-300 border-0 shadow-lg overflow-hidden bg-white rounded-lg"
               >
-                <div className="aspect-square bg-gradient-to-br from-blue-100 to-purple-100 relative overflow-hidden">
+                <div className="aspect-square relative overflow-hidden">
+                  <img
+                    src={member.image}
+                    alt={`${member.name} profile`}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
                   <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-purple-500/20 group-hover:from-blue-500/30 group-hover:to-purple-500/30 transition-all duration-300"></div>
                   <div className="absolute bottom-4 left-4 right-4">
                     <div className="flex space-x-3">
@@ -134,8 +141,6 @@ export default function TeamPage() {
           </div>
         </div>
       </section>
-
-      
     </div>
   );
 }
