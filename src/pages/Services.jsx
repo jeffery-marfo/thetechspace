@@ -1,4 +1,8 @@
 import { Code, Palette, Smartphone, Monitor, Search, Zap, ArrowRight, Check } from "lucide-react";
+import S1 from "../assets/img/S1.jpg"; // Adjust the path to your image file
+import WD1 from "../assets/img/WD1.png"; // Placeholder image for Website Design
+import GD1 from "../assets/img/GD1.png"; // Placeholder image for Graphic Design
+import UI2 from "../assets/img/UI2.png"; // Placeholder image for UI/UX Design
 
 export default function ServicesPage() {
   const services = [
@@ -15,6 +19,7 @@ export default function ServicesPage() {
         "Maintenance & Support",
       ],
       color: "blue",
+      image: WD1, // Added image property
     },
     {
       icon: Palette,
@@ -29,6 +34,7 @@ export default function ServicesPage() {
         "Social Media Graphics",
       ],
       color: "purple",
+      image: GD1, // Added image property
     },
     {
       icon: Smartphone,
@@ -36,6 +42,7 @@ export default function ServicesPage() {
       description: "User-centered design that creates intuitive experiences and drives engagement across all devices.",
       features: ["User Research", "Wireframing", "Prototyping", "User Testing", "Mobile App Design", "Design Systems"],
       color: "emerald",
+      image: UI2, // Added image property
     },
   ];
 
@@ -59,17 +66,23 @@ export default function ServicesPage() {
 
   return (
     <div className="min-h-screen bg-white">
-      
-
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-slate-50 to-blue-50">
-        <div className="container mx-auto px-4">
+      <section className="relative py-40">
+        <img
+          src={S1}
+          alt="Service Hero"
+          className="absolute top-0 left-0 w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-black opacity-30"></div> {/* Overlay for readability */}
+        <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <span className="inline-block mb-6 bg-emerald-100 text-emerald-800 border border-emerald-200 px-3 py-1 rounded-full text-sm font-medium">
+            <span className="inline-block mb-6 bg-slate-900 text-white border border-blue-200 px-3 py-1 rounded-full text-sm font-medium">
               Our Services
             </span>
-            <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">Comprehensive Digital Solutions</h1>
-            <p className="text-xl text-slate-600">
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              Comprehensive Digital Solutions
+            </h1>
+            <p className="text-xl text-blue-100 mb-8">
               From concept to launch, we provide end-to-end digital services that help your business thrive in the
               digital landscape.
             </p>
@@ -103,27 +116,22 @@ export default function ServicesPage() {
                     ))}
                   </div>
                   <div className="flex flex-col sm:flex-row gap-4">
-                    <button className="bg-emerald-500 hover:bg-emerald-600 text-white font-semibold px-4 py-2 rounded-md flex items-center">
+                    <button className=" bg-slate-700 hover:bg-emerald-600 text-white font-semibold px-4 py-2 rounded-md flex items-center">
                       Get Quote
                       <ArrowRight className="ml-2 h-4 w-4" />
                     </button>
-                    <button className="border border-emerald-500 text-emerald-500 hover:bg-emerald-500 hover:text-white font-semibold px-4 py-2 rounded-md transition-colors">
+                    <button className="border border-slate-900 text-slate-800 hover:bg-emerald-500 hover:text-white font-semibold px-4 py-2 rounded-md transition-colors">
                       Learn More
                     </button>
                   </div>
                 </div>
                 <div className={index % 2 === 1 ? "lg:col-start-1" : ""}>
                   <div className="border-0 shadow-xl overflow-hidden rounded-lg">
-                    <div
-                      className={`aspect-video bg-gradient-to-br from-${service.color}-100 to-${service.color}-200 relative`}
-                    >
-                      <div
-                        className={`absolute inset-0 bg-gradient-to-br from-${service.color}-500/20 to-${service.color}-600/20`}
-                      ></div>
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <service.icon className={`h-24 w-24 text-${service.color}-600/30`} />
-                      </div>
-                    </div>
+                    <img
+                      src={service.image}
+                      alt={`${service.title} illustration`}
+                      className="w-full h-auto object-cover aspect-video"
+                    />
                   </div>
                 </div>
               </div>
@@ -222,8 +230,6 @@ export default function ServicesPage() {
           </div>
         </div>
       </section>
-
-      
     </div>
   );
 }
