@@ -14,7 +14,7 @@ export default function AboutPage() {
           alt="About Hero"
           className="absolute top-0 left-0 w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-black opacity-60"></div> {/* Overlay for readability */}
+        <div className="absolute inset-0 bg-black opacity-40"></div> {/* Overlay for readability */}
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <span className="inline-block mb-6  bg-slate-900  text-white border border-blue-200 px-3 py-1 rounded-full text-sm font-medium">
@@ -78,7 +78,7 @@ export default function AboutPage() {
             <div>
               <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Why TTS?</h2>
               <p className="text-lg text-slate-600 mb-6">
-                Founded in 2019, TTS emerged from a simple belief: that great design and powerful technology should work
+                Founded in 2025, TTS emerged from a simple belief: that great design and powerful technology should work
                 hand in hand. Our founders, coming from backgrounds in both creative design and software development,
                 saw an opportunity to create something different.
               </p>
@@ -107,7 +107,7 @@ export default function AboutPage() {
               </div>
             </div>
             <div className="relative">
-              <div className="aspect-square bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl p-8 text-white">
+              <div className="aspect-square bg-gradient-to-br from-blue-600 to-purple-700 rounded-2xl p-8 text-white">
                 <div className="h-full flex flex-col justify-center">
                   <h3 className="text-2xl font-bold mb-4">What Sets Us Apart</h3>
                   <ul className="space-y-3">
@@ -136,13 +136,13 @@ export default function AboutPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
+      <section className="py-20 bg-gradient-to-r from-blue-600 to-purple-700 text-white">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Work Together?</h2>
           <p className="text-xl mb-8 text-blue-100 max-w-2xl mx-auto">
             Let's discuss your project and see how we can help bring your vision to life.
           </p>
-          <button className="bg-emerald-500 hover:bg-emerald-600 text-white font-semibold px-8 py-4 text-lg rounded-md transition-colors">
+          <button className="bg-green-700 hover:bg-slate-900 text-white font-semibold px-8 py-4 text-lg rounded-md transition-colors">
             Start Your Project
           </button>
         </div>

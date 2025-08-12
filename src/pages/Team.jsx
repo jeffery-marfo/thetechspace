@@ -6,30 +6,33 @@ import T4 from "../assets/img/T4.jpg";
 
 export default function TeamPage() {
   const teamMembers = [
-    {
-      name: "Alex Johnson",
-      role: "Founder & Creative Director",
-      specialty: "Brand Strategy & Visual Design",
-      bio: "With 8+ years in creative direction, Alex leads our design vision and ensures every project tells a compelling story.",
-      funFact: "Coffee enthusiast who can design better after the 3rd cup ☕",
-      image: Ab1
-    },
-    {
-      name: "Sarah Chen",
-      role: "Lead Developer",
-      specialty: "Full-Stack Development & DevOps",
-      bio: "Sarah brings complex ideas to life with clean, scalable code. She's our go-to for technical architecture and optimization.",
-      funFact: "Solves coding problems while rock climbing 🧗‍♀️",
-      image: Ab2
-    },
-    {
-      name: "Marcus Rodriguez",
-      role: "UX/UI Designer",
-      specialty: "User Experience & Interface Design",
-      bio: "Marcus crafts intuitive user experiences that convert. His designs are both beautiful and highly functional.",
+     {
+      name: "Daniel Oppong-Boah",
+      role: "CEO & FullStack Developer",
+      specialty: "Software Developer & Web Developer",
+      bio: "Daniel crafts intuitive user experiences that convert. His designs are both beautiful and highly functional.",
       funFact: "Sketches app ideas on napkins during lunch breaks 📱",
       image: Ab3
     },
+{
+      name: "Esther Abla Dzampah",
+      role: "Co-founder & Adminstrator",
+      specialty: "Frontend Developer & Graphic Designer",
+      bio: "Esther brings complex ideas to life with clean, scalable code. She's our go-to for technical architecture and optimization.",
+      funFact: "Solves coding problems while rock climbing 🧗‍♀️",
+      image: Ab2
+    },
+
+    {
+      name: "Jeffery Boafo",
+      role: "Co-Founder & Creative Director",
+      specialty: " Frontend Developer , Product Designer, Brand Strategist & Visual Design",
+      bio: "With 8+ years in creative direction, Jeffery leads our design vision and ensures every project tells a compelling story.",
+      funFact: "Coffee enthusiast who can design better after the 3rd cup ☕",
+      image: Ab1
+    },
+    
+   
   ];
 
   return (

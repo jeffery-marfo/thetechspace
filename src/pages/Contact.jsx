@@ -94,7 +94,7 @@ export default function ContactPage() {
                     />
                   </div>
 
-                  <button className="w-full bg-emerald-500 hover:bg-emerald-600 text-white font-semibold py-3 rounded-md flex items-center justify-center">
+                  <button className="w-full bg-slate-900 hover:bg-emerald-600 text-white font-semibold py-3 rounded-md flex items-center justify-center">
                     Send Message
                     <Send className="ml-2 h-4 w-4" />
                   </button>
