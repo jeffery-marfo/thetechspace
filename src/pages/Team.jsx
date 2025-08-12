@@ -2,6 +2,7 @@ import { Linkedin, Twitter, Github } from "lucide-react";
 import Ab1 from "../assets/img/Ab1.jpg";
 import Ab2 from "../assets/img/Ab2.jpeg";
 import Ab3 from "../assets/img/Ab3.jpeg";
+import T4 from "../assets/img/T4.jpg";
 
 export default function TeamPage() {
   const teamMembers = [
@@ -32,22 +33,35 @@ export default function TeamPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-white">
-      {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-slate-50 to-blue-50">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <span className="inline-block mb-6 bg-purple-100 text-purple-800 border border-purple-200 px-3 py-1 rounded-full text-sm font-medium">
-              Meet Our Team
-            </span>
-            <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">The Creative Minds Behind TTS</h1>
-            <p className="text-xl text-slate-600">
-              Our diverse team of designers, developers, and strategists work together to create exceptional digital
+    
+    <div className="min-h-screen ">
+
+        <section className="relative py-50">
+              
+      
+              <img
+                src={T4}
+                alt="About Hero"
+                className="absolute top-0 left-0 w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-black opacity-30"></div> {/* Overlay for readability */}
+              <div className="container mx-auto px-4 relative z-10">
+                <div className="max-w-4xl mx-auto text-center">
+                  <span className="inline-block mb-6  bg-slate-900  text-white border border-blue-200 px-3 py-1 rounded-full text-sm font-medium">
+                     Meet Our Team
+                  </span>
+                  <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                   The Creative Minds Behind TTS
+                  </h1>
+                  <p className="text-xl text-blue-100 mb-8">
+                   Our diverse team of designers, developers, and strategists work together to create exceptional digital
               experiences. Get to know the people who make the magic happen.
-            </p>
-          </div>
-        </div>
-      </section>
+                  </p>
+                </div>
+              </div>
+            </section>
+
+     
 
       {/* Team Grid */}
       <section className="py-20">

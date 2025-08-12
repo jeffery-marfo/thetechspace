@@ -5,13 +5,16 @@ export default function AboutPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section with Image Background */}
-      <section className="relative py-40">
+      
+      <section className="relative py-50">
+        
+
         <img
           src={Ab4}
           alt="About Hero"
           className="absolute top-0 left-0 w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-black opacity-20"></div> {/* Overlay for readability */}
+        <div className="absolute inset-0 bg-black opacity-60"></div> {/* Overlay for readability */}
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <span className="inline-block mb-6  bg-slate-900  text-white border border-blue-200 px-3 py-1 rounded-full text-sm font-medium">

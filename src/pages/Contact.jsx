@@ -1,26 +1,37 @@
 import { Mail, Phone, MapPin, Clock, Send } from "lucide-react";
+import C1 from "../assets/img/C1.jpg";
 
 export default function ContactPage() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen ">
+      
+      <section className="relative py-50">
+                    
+            
+                    <img
+                      src={C1}
+                      alt="About Hero"
+                      className="absolute top-0 left-0 w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-black opacity-30"></div> {/* Overlay for readability */}
+                    <div className="container mx-auto px-4 relative z-10">
+                      <div className="max-w-4xl mx-auto text-center">
+                        <span className="inline-block mb-6  bg-slate-900  text-white border border-blue-200 px-3 py-1 rounded-full text-sm font-medium">
+                         Get In Touch
+                        </span>
+                        <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                        Get In Touch
+                        </h1>
+                        <p className="text-xl text-blue-100 mb-8">
+                        Ready to bring your vision to life? We'd love to hear about your project and discuss how we can help you
+              achieve your goals.
+                        </p>
+                      </div>
+                    </div>
+                  </section>
       
 
-      {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-slate-50 to-blue-50">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <span className="inline-block mb-6 bg-emerald-100 text-emerald-800 border border-emerald-200 px-3 py-1 rounded-full text-sm font-medium">
-              Get In Touch
-            </span>
-            <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">Let's Start Your Project</h1>
-            <p className="text-xl text-slate-600">
-              Ready to bring your vision to life? We'd love to hear about your project and discuss how we can help you
-              achieve your goals.
-            </p>
-          </div>
-        </div>
-      </section>
-
+     
       {/* Contact Form & Info */}
       <section className="py-20">
         <div className="container mx-auto px-4">

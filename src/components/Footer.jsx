@@ -1,104 +1,166 @@
-import { Link } from "react-router";
-import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin } from "lucide-react";
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router';
+import { animateScroll as scroll } from 'react-scroll';
+import {
+  FaMapMarkerAlt,
+  FaEnvelope,
+  FaPhone,
+  FaFacebookF,
+  FaTwitter,
+  FaInstagram,
+  FaPinterest,
+  FaArrowUp,
+  FaCcVisa,
+  FaCcMastercard,
+  FaCcPaypal,
+  FaCcStripe
+} from 'react-icons/fa';
+import logo1 from '../assets/img/logo1.png'; // Adjust the path to your logo image file
 
-export default function Footer() {
+const FooterLink = ({ to, children }) => (
+  <Link
+    to={to}
+    className="relative inline-block text-gray-300 hover:text-brand-gold transition-colors duration-300 group"
+  >
+    {children}
+    <span className="absolute bottom-[-2px] left-0 w-full h-px bg-brand-gold transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out"></span>
+  </Link>
+);
+
+const Footer = () => {
+  const [showScroll, setShowScroll] = useState(false);
+
+  useEffect(() => {
+    const checkScrollTop = () => {
+      if (!showScroll && window.pageYOffset > 400) {
+        setShowScroll(true);
+      } else if (showScroll && window.pageYOffset <= 400) {
+        setShowScroll(false);
+      }
+    };
+    window.addEventListener('scroll', checkScrollTop);
+    return () => window.removeEventListener('scroll', checkScrollTop);
+  }, [showScroll]);
+
+  const scrollToTop = () => {
+    scroll.scrollToTop();
+  };
+
   return (
-    <footer className="bg-slate-900 text-white">
-      <div className="container mx-auto px-4 py-16">
-        <div className="grid md:grid-cols-4 gap-8">
-          <div>
-            <div className="flex items-center space-x-2 mb-6">
-              <div className="w-8 h-8 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-sm">TTS</span>
+    <>
+      <footer className="bg-slate-900 text-gray-300 pt-16 pb-8">
+        <div className="w-full mx-auto  sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {/* Column 1: About */}
+            <div className="space-y-4">
+              <Link to="/">
+                <img src={logo1} alt="TTS Logo" className="h-16 w-auto" />
+              </Link>
+              <p className="text-sm">
+                The Tech Space — building Africa’s leading innovation hub for tech, design, and digital solutions.
+              </p>
+              <div className="space-y-2 text-sm">
+                <p className="flex items-start">
+                  <FaMapMarkerAlt className="w-4 h-4 mr-3 mt-1 flex-shrink-0 text-brand-gold" />  
+                  123 Tech Street, Digital City
+                </p>
+                <p className="flex items-center">
+                  <FaEnvelope className="w-4 h-4 mr-3 text-brand-gold" /> hello@thetechspace.com
+                </p>
+                <p className="flex items-center">
+                  <FaPhone className="w-4 h-4 mr-3 text-brand-gold" /> +1 (555) 123-4567
+                </p>
               </div>
-              <span className="font-bold text-xl">The Tech Space</span>
             </div>
-            <p className="text-slate-400 mb-6">
-              Your partner in digital design and development. Creating exceptional experiences that drive results.
-            </p>
+
+            {/* Column 2: Quick Links */}
+            <div>
+              <h3 className="text-lg font-semibold text-white mb-4">Quick Links</h3>
+              <ul className="space-y-3 text-sm">
+                <li><FooterLink to="/about">About Us</FooterLink></li>
+                <li><FooterLink to="/services">Services</FooterLink></li>
+                <li><FooterLink to="/contact">Contact</FooterLink></li>
+                <li><FooterLink to="/projects">Projects</FooterLink></li>
+              </ul>
+            </div>
+
+            {/* Column 3: Services */}
+            <div>
+              <h3 className="text-lg font-semibold text-white mb-4">Services</h3>
+              <ul className="space-y-3 text-sm">
+                <li><FooterLink to="/services/web-development">Web Development</FooterLink></li>
+                <li><FooterLink to="/services/graphic-design">Graphic Design</FooterLink></li>
+                <li><FooterLink to="/services/ui-ux">UI/UX Design</FooterLink></li>
+                <li><FooterLink to="/services/branding">Branding</FooterLink></li>
+              </ul>
+            </div>
+
+            {/* Column 4: Newsletter */}
+            <div>
+              <h3 className="text-lg font-semibold text-white mb-4">Newsletter</h3>
+              <p className="text-sm mb-4">Subscribe to our newsletter for the latest updates and insights.</p>
+              <form>
+                <div className="flex">
+                  <input
+                    type="email"
+                    placeholder="Enter Email Address"
+                    className="w-full px-4 py-2 text-gray-800 bg-gray-100 rounded-l-md focus:outline-none focus:ring-2 focus:ring-brand-gold"
+                  />
+                  <button
+                    type="submit"
+                    className="bg-brand-gold text-white px-4 py-2 rounded-r-md hover:opacity-90 transition-colors"
+                  >
+                    Subscribe
+                  </button>
+                </div>
+              </form>
+              <div className="flex items-center mt-4">
+                <input
+                  type="checkbox"
+                  id="terms"
+                  className="h-4 w-4 text-brand-gold focus:ring-brand-gold border-gray-300 rounded"
+                />
+                <label htmlFor="terms" className="ml-2 block text-sm text-gray-400">
+                  I agree to all terms and policies
+                </label>
+              </div>
+              <div className="flex space-x-4 mt-6">
+                <a href="https://facebook.com" className="text-gray-400 hover:text-white"><FaFacebookF /></a>
+                <a href="https://twitter.com" className="text-gray-400 hover:text-white"><FaTwitter /></a>
+                <a href="https://instagram.com" className="text-gray-400 hover:text-white"><FaInstagram /></a>
+                <a href="https://pinterest.com" className="text-gray-400 hover:text-white"><FaPinterest /></a>
+              </div>
+            </div>
+          </div>
+
+          {/* Footer bottom */}
+          <div className="mt-12 border-t border-gray-700 pt-8 flex flex-col md:flex-row justify-between items-center text-sm">
+            <p>&copy; {new Date().getFullYear()} TTS - The Tech Space. All Rights Reserved.</p>
+            <div className="flex items-center space-x-4 my-4 md:my-0">
+              <FaCcVisa size={28} />
+              <FaCcMastercard size={28} />
+              <FaCcPaypal size={28} />
+              <FaCcStripe size={28} />
+            </div>
             <div className="flex space-x-4">
-              <Facebook className="h-5 w-5 text-slate-400 hover:text-white cursor-pointer transition-colors" />
-              <Twitter className="h-5 w-5 text-slate-400 hover:text-white cursor-pointer transition-colors" />
-              <Instagram className="h-5 w-5 text-slate-400 hover:text-white cursor-pointer transition-colors" />
-              <Linkedin className="h-5 w-5 text-slate-400 hover:text-white cursor-pointer transition-colors" />
+              <FooterLink to="/terms">Terms of Use</FooterLink>
+              <FooterLink to="/privacy">Privacy Policy</FooterLink>
             </div>
           </div>
-
-          <div>
-            <h3 className="font-semibold text-lg mb-6">Services</h3>
-            <ul className="space-y-3 text-slate-400">
-              <li>
-                <Link to="/services" className="hover:text-white transition-colors">
-                  Web Development
-                </Link>
-              </li>
-              <li>
-                <Link to="/services" className="hover:text-white transition-colors">
-                  Graphic Design
-                </Link>
-              </li>
-              <li>
-                <Link to="/services" className="hover:text-white transition-colors">
-                  UI/UX Design
-                </Link>
-              </li>
-              <li>
-                <Link to="/services" className="hover:text-white transition-colors">
-                  Branding
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="font-semibold text-lg mb-6">Company</h3>
-            <ul className="space-y-3 text-slate-400">
-              <li>
-                <Link to="/about" className="hover:text-white transition-colors">
-                  About Us
-                </Link>
-              </li>
-              <li>
-                <Link to="/team" className="hover:text-white transition-colors">
-                  Our Team
-                </Link>
-              </li>
-              <li>
-                <Link to="/blog" className="hover:text-white transition-colors">
-                  Blog
-                </Link>
-              </li>
-              <li>
-                <Link to="/contact" className="hover:text-white transition-colors">
-                  Contact
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="font-semibold text-lg mb-6">Contact Info</h3>
-            <ul className="space-y-3 text-slate-400">
-              <li className="flex items-center">
-                <Mail className="h-4 w-4 mr-2" />
-                hello@thetechspace.com
-              </li>
-              <li className="flex items-center">
-                <Phone className="h-4 w-4 mr-2" />
-                +1 (555) 123-4567
-              </li>
-              <li className="flex items-center">
-                <MapPin className="h-4 w-4 mr-2" />
-                123 Tech Street, Digital City
-              </li>
-            </ul>
-          </div>
         </div>
+      </footer>
 
-        <div className="border-t border-slate-800 mt-12 pt-8 text-center text-slate-400">
-          <p>© {new Date().getFullYear()} TTS - The Tech Space. All rights reserved.</p>
-        </div>
-      </div>
-    </footer>
+      {/* Scroll to Top Button */}
+      {showScroll && (
+        <button
+          onClick={scrollToTop}
+          className="fixed bottom-10 right-10 bg-brand-gold text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:opacity-90 transition-all duration-300 z-50"
+        >
+          <FaArrowUp className="w-6 h-6" />
+        </button>
+      )}
+    </>
   );
-}
+};
+
+export default Footer;

@@ -67,7 +67,7 @@ export default function ServicesPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative py-40">
+      <section className="relative py-50">
         <img
           src={S1}
           alt="Service Hero"
