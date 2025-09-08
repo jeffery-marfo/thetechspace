@@ -76,7 +76,7 @@ export default function BlogPage() {
             </span>
             <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">Insights & Inspiration</h1>
             <p className="text-xl text-slate-600 mb-8">
-              Stay updated with the latest trends, tips, and insights from the world of design and development.
+              Stay  updated with the latest trends, tips, and insights from the world of design and development.
             </p>
 
             {/* Search Bar */}
