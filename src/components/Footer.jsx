@@ -10,10 +10,6 @@ import {
   FaInstagram,
   FaPinterest,
   FaArrowUp,
-  FaCcVisa,
-  FaCcMastercard,
-  FaCcPaypal,
-  FaCcStripe
 } from 'react-icons/fa';
 import logo1 from '../assets/img/logo1.png'; // Adjust the path to your logo image file
 
@@ -136,12 +132,7 @@ const Footer = () => {
           {/* Footer bottom */}
           <div className="mt-12 border-t border-gray-700 pt-8 flex flex-col md:flex-row justify-between items-center text-sm">
             <p>&copy; {new Date().getFullYear()} TTS - The Tech Space. All Rights Reserved.</p>
-            <div className="flex items-center space-x-4 my-4 md:my-0">
-              <FaCcVisa size={28} />
-              <FaCcMastercard size={28} />
-              <FaCcPaypal size={28} />
-              <FaCcStripe size={28} />
-            </div>
+          
             <div className="flex space-x-4">
               <FooterLink to="/terms">Terms of Use</FooterLink>
               <FooterLink to="/privacy">Privacy Policy</FooterLink>
